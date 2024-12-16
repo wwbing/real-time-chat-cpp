@@ -21,7 +21,7 @@
 #include <QJsonObject>              //信息包装成json
 #include <QJsonDocument>            //解析json
 
-//CRTP:起义递归模板
+//CRTP:奇异递归模板
 class HttpMgr : public QObject, public Singleton<HttpMgr>, public std::enable_shared_from_this<HttpMgr>
 {
     Q_OBJECT        //继承了QObject，还需要声明这个宏才能使用信号和槽
