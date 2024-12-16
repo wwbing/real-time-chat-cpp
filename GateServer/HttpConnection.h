@@ -10,7 +10,7 @@ public:
     void Start();
 
 private:
-    //tcp没有超时检测？
+    //tcp不是有超时检测吗，cpp为什么还需要自己实现超时检测
     void CheckDeadline();
     void WriteResponse();
     void HandleReq();
