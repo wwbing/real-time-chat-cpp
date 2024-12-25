@@ -140,9 +140,15 @@
   <ItemGroup>
     <ClCompile Include="CServer.cpp" />
     <ClCompile Include="GateServer.cpp" />
+    <ClCompile Include="HttpConnection.cpp" />
+    <ClCompile Include="LogicSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CServer.h" />
+    <ClInclude Include="global_header.h" />
+    <ClInclude Include="HttpConnection.h" />
+    <ClInclude Include="LogicSystem.h" />
+    <ClInclude Include="Singleton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
