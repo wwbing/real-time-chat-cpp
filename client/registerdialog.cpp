@@ -36,6 +36,15 @@ void RegisterDialog::get_code_click(){
     bool match = regex.match(email).hasMatch();
     if(match){
         //发送http验证码
+        QJsonObject json_obj;
+        json_obj["email"] = email;
+
+        HttpMgr::GetInstance()->PostHttpReq(
+                                            QUrl(gate_url_prefix+"/get_varifycode"),
+                                            json_obj,
+                                            ReqId::ID_GET_VERIFT_CODE,
+                                            Modules::REGISERMOD
+                                            );
     }
     else{
         showTip("邮箱格式错误", match);
@@ -66,7 +75,7 @@ void RegisterDialog::slot_reg_mod_finish(ReqId id, QString res, ErrorCodes err){
         if(jsonDoc.isNull()){
             showTip("json解析失败",false);
         }
-        else if(jsonDoc.isObject()){
+        else if(!jsonDoc.isObject()){
             showTip("解析解析错误",false);
             return;
         }

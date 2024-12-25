@@ -20,7 +20,7 @@ void HttpMgr::PostHttpReq(QUrl url, QJsonObject json, ReqId req_id, Modules mod)
 
     request.setHeader(QNetworkRequest::ContentLengthHeader, QByteArray::number(data.length()));
 
-    auto self = shared_from_this(); //下来深入了解
+    auto self = shared_from_this(); //延长生命周期，避免回调函数过程中崩溃
 
     QNetworkReply* reply = _manager.post(request, data); //发送带数据的请求并获得回复数据
 

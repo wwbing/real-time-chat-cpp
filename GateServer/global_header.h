@@ -4,6 +4,9 @@
 #include <boost/beast/http.hpp>
 #include <boost/beast.hpp>
 #include <boost/asio.hpp>
+#include <boost/filesystem.hpp>
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/ini_parser.hpp>
 #include <memory>
 #include <map>
 #include <unordered_map>
@@ -16,6 +19,8 @@ namespace http = beast::http;           // from <boost/beast/http.hpp>
 namespace net = boost::asio;            // from <boost/asio.hpp>
 using tcp = boost::asio::ip::tcp;       // from <boost/asio/ip/tcp.hpp>
 
+class ConfigMgr;
+extern ConfigMgr gCfgMgr;
 
 enum ErrorCodes {
     Success = 0,

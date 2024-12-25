@@ -27,13 +27,12 @@ class HttpMgr : public QObject, public Singleton<HttpMgr>, public std::enable_sh
     Q_OBJECT        //继承了QObject，还需要声明这个宏才能使用信号和槽
 public:
     ~HttpMgr();
+    void PostHttpReq(QUrl url, QJsonObject json, ReqId req_id, Modules mod); //发送http请求
 
 private:
     HttpMgr();
     friend class Singleton<HttpMgr>; //将其声明为友元，在基类的构造_instance实例的时候能够调用当前类的私有构造函数
     QNetworkAccessManager _manager;
-
-    void PostHttpReq(QUrl url, QJsonObject json, ReqId req_id, Modules mod); //发送http请求
 
 private slots:
     void slot_http_finish(ReqId id, QString res, ErrorCodes err, Modules mod); //处理信号的槽函数参数要和信号匹配,可少不可多
