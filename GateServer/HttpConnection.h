@@ -23,6 +23,14 @@ private:
     net::steady_timer deadline_{
         _socket.get_executor(), std::chrono::seconds(60)    //60秒定时器,这里用的花括号初始化(List initialization)
     };
+    
+    unsigned char ToHex(unsigned char x);
+    unsigned char FromHex(unsigned char x);
+    std::string UrlEncode(const std::string& str);
+    std::string UrlDecode(const std::string& str);
 
+    std::string _get_url;
+    std::unordered_map<std::string, std::string> _get_params;
+    void PreParseGetParam();
 };
 

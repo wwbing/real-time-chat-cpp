@@ -6,6 +6,7 @@
 #include <boost/asio.hpp>
 #include <memory>
 #include <map>
+#include <unordered_map>
 #include "Singleton.h"
 
 namespace beast = boost::beast;         // from <boost/beast.hpp>
