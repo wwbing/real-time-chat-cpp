@@ -43,7 +43,7 @@ void HttpConnection::HandleReq() {
 
     _response.keep_alive(false);
 
-    //只处理get请求,暂时不管post
+    //get请求
     if (_request.method() == http::verb::get) {
 
         PreParseGetParam();
@@ -58,6 +58,26 @@ void HttpConnection::HandleReq() {
             WriteResponse();
             return;
         }       
+        else {                  //成功,将LogicSystem处理后写好的正确信息返回客户端
+            _response.result(http::status::ok);
+            _response.set(http::field::server, "GateServer");   //补充回复方的信息
+            WriteResponse();
+            return;
+        }
+    }
+    //post请求
+    else if (_request.method() == http::verb::post) {
+     
+        //交给逻辑系统类处理
+        bool success = LogicSystem::GetInstance()->HandlePost(_request.target(), shared_from_this());
+
+        if (!success) {         //没成功的情况下，写好错误信息返回客户端
+            _response.result(http::status::not_found);
+            _response.set(http::field::content_type, "text/plain");
+            beast::ostream(_response.body()) << "url not found\r\n";
+            WriteResponse();
+            return;
+        }
         else {                  //成功,将LogicSystem处理后写好的正确信息返回客户端
             _response.result(http::status::ok);
             _response.set(http::field::server, "GateServer");   //补充回复方的信息

@@ -1,18 +1,8 @@
-﻿  CServer.cpp
+﻿  LogicSystem.cpp
   Please define _WIN32_WINNT or _WIN32_WINDOWS appropriately. For example:
   - add -D_WIN32_WINNT=0x0601 to the compiler command line; or
   - add _WIN32_WINNT=0x0601 to your project's Preprocessor Definitions.
   Assuming _WIN32_WINNT=0x0601 (i.e. Windows 7 target).
-C:\Users\jiahao\Desktop\JIAHAO\grade_two\cpp\project\real-time-chat-system\GateServer\CServer.cpp(32,37): warning C4101: “exp”: 未引用的局部变量
-  HttpConnection.cpp
-  Please define _WIN32_WINNT or _WIN32_WINDOWS appropriately. For example:
-  - add -D_WIN32_WINNT=0x0601 to the compiler command line; or
-  - add _WIN32_WINNT=0x0601 to your project's Preprocessor Definitions.
-  Assuming _WIN32_WINNT=0x0601 (i.e. Windows 7 target).
-  LogicSystem.cpp
-  Please define _WIN32_WINNT or _WIN32_WINDOWS appropriately. For example:
-  - add -D_WIN32_WINNT=0x0601 to the compiler command line; or
-  - add _WIN32_WINNT=0x0601 to your project's Preprocessor Definitions.
-  Assuming _WIN32_WINNT=0x0601 (i.e. Windows 7 target).
-  正在生成代码...
+json_mdd.lib(json_reader.obj) : warning LNK4099: 未找到 PDB“”(使用“json_mdd.lib(json_reader.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+json_mdd.lib(json_value.obj) : warning LNK4099: 未找到 PDB“”(使用“json_mdd.lib(json_value.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
   GateServer.vcxproj -> C:\Users\jiahao\Desktop\JIAHAO\grade_two\cpp\project\real-time-chat-system\GateServer\x64\Debug\GateServer.exe
