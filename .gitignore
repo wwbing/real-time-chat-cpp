@@ -1,7 +1,7 @@
 #忽略GateServer下生成文件
 GateServer/.vs/
 GateServer/x64/
-GateServer/GateServer/
+GateServer/GateServer/x64/
 
 
 #忽略Qt的生成文件
