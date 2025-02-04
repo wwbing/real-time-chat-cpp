@@ -1,0 +1,24 @@
+#ifndef APPLYFRIENDLIST_H
+#define APPLYFRIENDLIST_H
+#include <QListWidget>
+#include <QEvent>
+
+/*
+    ApplyFriendPage使用ApplyFriendList显示好友申请右侧的显示
+*/
+
+class ApplyFriendList: public QListWidget
+{
+     Q_OBJECT
+public:
+    ApplyFriendList(QWidget *parent = nullptr);
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
+private slots:
+
+signals:
+    void sig_show_search(bool);
+};
+
+#endif // APPLYFRIENDLIST_H
